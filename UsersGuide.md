@@ -1,6 +1,6 @@
 ## Introduction ##
 
-[Protothreads](http://en.wikipedia.org/wiki/Protothreads) is a programming model invented by Adam Dunkels that combines the advantages of _event-driven_ (sometimes also called _state machine_) programming and _threaded_ programming. The main advantage of the event-driven model is efficiency, both speed and memory usage.  The main advantage of the threaded model is [algorithm clarity](http://www.sics.se/~adam/dunkels06protothreads.pdf).  Protothreads gives you both. A protothread is an extremely lightweight thread. As with event-driven programming, there is a single stack; but like threaded programming, a function can (at least conceptually) block. This protothreads implementation:
+[Protothreads](http://en.wikipedia.org/wiki/Protothreads) is a programming model invented by Adam Dunkels that combines the advantages of _event-driven_ (sometimes also called _state machine_) programming and _threaded_ programming. The main advantage of the event-driven model is efficiency, both speed and memory usage.  The main advantage of the threaded model is [algorithm clarity](http://dunkels.com/adam/dunkels06protothreads.pdf).  Protothreads gives you both. A protothread is an extremely lightweight thread. As with event-driven programming, there is a single stack; but like threaded programming, a function can (at least conceptually) block. This protothreads implementation:
   * is not an implementation of POSIX threads or any other standard API
   * does not require assembly-language code or use setjmp/longjmp
   * is independent of CPU architecture
@@ -14,7 +14,7 @@ This project includes:
   * about 800 lines of test code
   * gdb (debugger) macros to print the stack traces of a given protothread or all protothreads.
 
-The original project (in SVN `trunk`) does not support multiple cores (CPUs). More recently, I wrote a version that supports multiple cores, using the single-core version as a starting point (so it is very similar). This version is in the SVN branch `branch/multicore`. It is documented in the final section below; from this point until that section, this document describes the single-core version.
+The original project (in branch `master`) does not support multiple cores (CPUs). More recently, I wrote a version that supports multiple cores, using the single-core version as a starting point (so it is very similar). This version is in branch `multicore`. It is documented in the final section below; from here until that section, this document describes the single-core version.
 
 ## Threads without stacks ##
 
@@ -257,10 +257,10 @@ Please see `branches/multicore/protothread_test.c` for working examples of using
 
 [Wikipedia protothreads](http://en.wikipedia.org/wiki/Protothreads)
 
-[POSIX thread reference](http://www.opengroup.org/onlinepubs/009695399/basedefs/pthread.h.html)
+[POSIX thread reference](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/pthread.h.html)
 
-I wish to gratefully acknowledge Adam Dunkels (with support from Oliver Schmidt) for inventing this brilliant idea. Please see his [web site](http://www.sics.se/~adam/pt/).
+I wish to gratefully acknowledge Adam Dunkels (with support from Oliver Schmidt) for inventing this brilliant idea. Please see his [web site](http://dunkels.com/adam/pt/).
 
 My thanks to Paul Soulier for introducing me to the concept of protothreads, and to Marshall McMullen and John Rockenfeller for reviewing drafts of this article.
 
-_Larry Ruane is a programmer with [LeftHand Networks, Inc., an HP Company](http://www.lefthandnetworks.com/home.aspx)_
+_LarryRuane@gmail.com_
